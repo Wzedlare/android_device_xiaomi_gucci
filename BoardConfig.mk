@@ -16,7 +16,7 @@
 FORCE_32_BIT := true
 
 include device/cyanogen/msm8916-common/BoardConfigCommon.mk
-DEVICE_PATH := device/wingtech/wt88047
+DEVICE_PATH := device/xiaomi/gucci
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Bootloader
@@ -25,15 +25,14 @@ TARGET_BOOTLOADER_BOARD_NAME :=
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 BOARD_KERNEL_CMDLINE += phy-msm-usb.floated_charger_enable=1
-TARGET_KERNEL_SOURCE := kernel/wingtech/msm8916
-TARGET_KERNEL_CONFIG := cyanogenmod_wt88047_defconfig
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_TAGS_OFFSET := 0x00000100
+BOARD_RAMDISK_OFFSET     := 0x01000000
+TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8916
+TARGET_KERNEL_CONFIG := gucci_defconfig
 
 # CPU
 TARGET_CPU_CORTEX_A53 := true
-
-# WT88047 init
-TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_wt88047.c
-TARGET_UNIFIED_DEVICE := true
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
@@ -69,6 +68,10 @@ EXTENDED_FONT_FOOTPRINT := true
 TARGET_GPS_HAL_PATH := $(DEVICE_PATH)/gps
 TARGET_NO_RPC := true
 
+# Init
+TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_gucci.c
+TARGET_UNIFIED_DEVICE := true
+
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
@@ -84,6 +87,7 @@ BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 5939100672
+BLOCK_BASED_OTA := false
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
@@ -102,4 +106,4 @@ BOARD_SEPOLICY_UNION += \
     file_contexts
 
 # inherit from the proprietary version
--include vendor/wingtech/wt88047/BoardConfigVendor.mk
+-include vendor/xiaomi/gucci/BoardConfigVendor.mk
