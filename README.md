@@ -1,5 +1,2 @@
-Device configuration for Redmi 2
+Device configuration for Redmi Note Prime (gucci)
 ==============================
-This device tree supports:
-
-    redmi2 (wt88047 variant)

@@ -194,7 +194,7 @@ void init_target_properties()
     int rc;
 
     rc = property_get("ro.product.name", device);
-    if (!rc || (strstr(device, "wt88047") == NULL))
+    if (!rc || (strstr(device, "gucci") == NULL))
         return;
 
     import_kernel_cmdline(0, import_kernel_nv);
@@ -254,18 +254,18 @@ void init_target_properties()
         property_set("ro.product.name", "2014112");
         property_set("ro.telephony.default_network", "9,1");
         property_set("telephony.lteOnCdmaDevice", "0");
-    } else { /* including S88047A2 and S88047A1 */
-        property_set("ro.build.product", "HM2014811");
-        property_set("ro.product.device", "HM2014811");
-        property_set("ro.product.model", "2014811");
-        property_set("ro.product.name", "2014811");
+    } else { /* including gucci */
+        property_set("ro.build.product", "gucci");
+        property_set("ro.product.device", "gucci");
+        property_set("ro.product.model", "gucci");
+        property_set("ro.product.name", "gucci");
         property_set("ro.telephony.default_network", "9,1");
         property_set("telephony.lteOnCdmaDevice", "0");
     }
 
     /* Unified description and fingerprint for now */
-    property_set("ro.build.description", "wt88047-user 5.1.1 LMY47V 6.1.28 release-keys");
-    property_set("ro.build.fingerprint", "Xiaomi/wt88047/wt88047:5.1.1/LMY47V/6.1.28:user/release-keys");
+    property_set("ro.build.description", "gucci-user 5.1.1 LMY47V 6.1.28 release-keys");
+    property_set("ro.build.fingerprint", "Xiaomi/gucci/gucci:5.1.1/LMY47V/6.1.28:user/release-keys");
 
     ERROR("Setup %s properties done!\n", board_id);
 
