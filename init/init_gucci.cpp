@@ -69,7 +69,7 @@ void init_target_properties()
     std::string buf;
 
     std::string product = property_get("ro.product.name");
-    if (product.find("wt88047") == std::string::npos)
+    if (product.find("gucci") == std::string::npos)
         return;
 
     fin.open("/proc/cmdline");
@@ -140,12 +140,12 @@ void init_target_properties()
         property_override("ro.product.name", "2014112");
         property_set("ro.telephony.default_network", "9,1");
     }
-    /* S88047A2 and S88047A1 */
+    /* gucci */
     else {
-        property_override("ro.build.product", "HM2014811");
-        property_override("ro.product.device", "HM2014811");
-        property_override("ro.product.model", "2014811");
-        property_override("ro.product.name", "2014811");
+        property_override("ro.build.product", "gucci");
+        property_override("ro.product.device", "gucci");
+        property_override("ro.product.model", "Redmi Note Prime");
+        property_override("ro.product.name", "gucci");
         property_set("ro.telephony.default_network", "9,1");
     }
 
